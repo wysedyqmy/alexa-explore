@@ -1,0 +1,9 @@
+package:
+  name: alexa-skill
+  version: 1.0
+  license: Apache-2.0
+  actions:
+    demo:
+      version: 1.0
+      location: src/action/alexa-demo.js
+      runtime: nodejs@6
