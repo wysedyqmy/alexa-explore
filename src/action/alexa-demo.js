@@ -167,7 +167,7 @@ Alexa = (function () {
      * Handles the request to use the partnerday website report suite
      */
     function handleNumOfApiCallsRequest(intent, session, response) {
-        var speechOutput = "The total number of api calls today for cc eco is 717,557,988.";
+        var speechOutput = "The total number of api calls today for cc eco is 717,557,000. Anything else?";
 
         return response.ask(speechOutput);
     }
@@ -183,7 +183,7 @@ Alexa = (function () {
     }
 
     function handleTopCustomersRequest(intent, session, response) {
-        var speechOutput = "Top 5 customers used this month for cc eco are orion rigel 211, orion PS 1, Behance IOS 21, Adobe Draw 1, Marvel Web 11. Anything else?";
+        var speechOutput = "Top 5 customers used this month for cc eco are orion rigel 211, orion PS 1, Be hance IOS 21, Adobe Draw 1, Marvel Web 11. Anything else?";
 
         return response.ask(speechOutput);
     }
@@ -215,9 +215,7 @@ Alexa = (function () {
     }
 
     function handleThankYouRequest(intent, session, response) {
-        // get city re-prompt
-        var repromptText = "Say either, email or upload to creative cloud: ";
-        var speechOutput = "Serverless is cool, isn't it ?  Goodbye !";
+        var speechOutput = "You are welcome. Have a nice day. Bye.";
 
         return response.tell(speechOutput);
     }
