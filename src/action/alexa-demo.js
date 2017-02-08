@@ -147,11 +147,11 @@ Alexa = (function () {
             return handleNumOfApiCallsRequest(intent, session, response);
         },
 
-        "PartnerdayPageViewsIntent": function (intent, session, response) {
-            return handlePartnerDayPageViewsRequest(intent, session, response);
+        "TopServicesIntent": function (intent, session, response) {
+            return handleTopServicesRequest(intent, session, response);
         },
-        "PartnerdayPageViews": function(intent,session,response) {
-            return handlePartnerDayPageViewsGeneric(intent,session,response);
+        "TopCustomersIntent": function(intent,session,response) {
+            return handleTopCustomersRequest(intent,session,response);
         }
     };
 
@@ -167,21 +167,29 @@ Alexa = (function () {
      * Handles the request to use the partnerday website report suite
      */
     function handleNumOfApiCallsRequest(intent, session, response) {
-        var repromptText = "The total number of api calls today for cc eco is 717,557,988.";
         var speechOutput = "The total number of api calls today for cc eco is 717,557,988.";
 
-        return response.ask(speechOutput, repromptText);
+        return response.ask(speechOutput);
     }
 
     /**
      * Handles the request to use the partnerday website report suite
      */
-    function handlePartnerDayPageViewsRequest(intent, session, response) {
+    function handleTopServicesRequest(intent, session, response) {
         // TODO: make the request to get real data from Adobe Analytics
-        var speechOutput = "The total number of page views this month is 3,871.";
+        var speechOutput = "Top 5 services used this month for cc eco are cc storage, ffc, cc collab, anywhere, cc behance. What else would you like to know?";
 
         return response.ask(speechOutput);
     }
+
+    function handleTopCustomersRequest(intent, session, response) {
+        var speechOutput = "Top 5 customers used this month for cc eco are orion rigel 211, orion PS 1, Behance IOS 21, Adobe Draw 1, Marvel Web 11. Anything else?";
+
+        return response.ask(speechOutput);
+    }
+
+
+
 
     /**
      * Handles the request using a custom Slot 'MetricName'
