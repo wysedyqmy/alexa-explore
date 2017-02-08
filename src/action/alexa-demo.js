@@ -143,8 +143,8 @@ Alexa = (function () {
             return handleHelpRequest(response);
         },
 
-        "PartnerDayWebsiteIntent": function (intent, session, response) {
-            return handlePartnerDayWebsiteRequest(intent, session, response);
+        "NumOfApiCallsIntent": function (intent, session, response) {
+            return handleNumOfApiCallsRequest(intent, session, response);
         },
 
         "PartnerdayPageViewsIntent": function (intent, session, response) {
@@ -157,7 +157,7 @@ Alexa = (function () {
 
     function handleOnLaunch(launchRequest, session, response) {
         var whatInfoPrompt = "What information would you like to retrieve from Adobe Analytics?",
-            speechOutput = "Welcome to Adobe Analytics.. Which report suite would you like to use?... Adobe I/O portal, Partnerday Website.",
+            speechOutput = "Welcome to I/O Insights. What metrics would you like to know?",
             repromptOutput = "Please say either Adobe I/O Portal or Partnerday Website.";
 
         return response.ask(speechOutput, repromptOutput);
@@ -166,9 +166,9 @@ Alexa = (function () {
     /**
      * Handles the request to use the partnerday website report suite
      */
-    function handlePartnerDayWebsiteRequest(intent, session, response) {
-        var repromptText = "Currently, I can tell you information about the following metrics: page views";
-        var speechOutput = "Ok, using the partner day report suite. How can I help you?";
+    function handleNumOfApiCallsRequest(intent, session, response) {
+        var repromptText = "The total number of api calls today for cc eco is 717,557,988.";
+        var speechOutput = "The total number of api calls today for cc eco is 717,557,988.";
 
         return response.ask(speechOutput, repromptText);
     }
